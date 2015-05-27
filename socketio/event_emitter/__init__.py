@@ -1,3 +1,6 @@
+import logging
+log = logging.getLogger(__name__)
+
 from collections import defaultdict
 
 
@@ -29,9 +32,10 @@ class EventEmitter(object):
         """
         Emit `event`, passing *args to each attached function.
         """
-
+        log.debug("emitting event: {0}".format(event))
         # Pass the args to each function in the events dict
         for fxn in self._events[event]:
+            log.debug("emitting to function: {0}".format(fxn))
             fxn(*args, **kwargs)
 
     def once(self, event, f=None, key=None):

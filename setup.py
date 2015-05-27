@@ -11,8 +11,8 @@ setup(
   classifiers = [],
   license='MIT',
   install_requires=[
-    'greenlet==0.4.4',
-    'gevent-websocket==0.9.3',
+    'greenlet',
+    'gevent-websocket',
     'WebOb==1.4',
     'requests==2.4.1',
     'ws4py==0.3.4',
